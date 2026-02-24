@@ -11,6 +11,7 @@ import type {
   SandboxPruneSettings,
 } from "./types.sandbox.js";
 import type { MemorySearchConfig } from "./types.tools.js";
+import type { CortexPoolSessionConfig } from "../memory/cortexpool-session.js";
 
 export type AgentModelEntryConfig = {
   alias?: string;
@@ -281,6 +282,17 @@ export type AgentDefaultsConfig = {
     browser?: SandboxBrowserSettings;
     /** Auto-prune sandbox containers. */
     prune?: SandboxPruneSettings;
+  };
+  /** CortexPool semantic memory configuration for session memory management. */
+  cortexPool?: CortexPoolSessionConfig & {
+    /** Extract facts every N messages (more efficient) */
+    extractEveryNMessages?: number;
+    /** Trigger semantic context when context is X% full (earlier = better comprehension) */
+    triggerThreshold?: number;
+    /** Sync facts to TPC server */
+    syncToTPC?: boolean;
+    /** TPC server URL */
+    tpcUrl?: string;
   };
 };
 

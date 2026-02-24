@@ -6,7 +6,7 @@ let cortexPool: any = null;
 
 async function getCortexPool() {
   if (!cortexPool) {
-    const { CortexPool } = await import('../../workspace/src/cortex-pool.js');
+    const { CortexPool } = await import('cortexpool');
     const dbPath = process.env.OPENCLAW_STATE_DIR 
       ? `${process.env.OPENCLAW_STATE_DIR}/cortexpool.db`
       : `${process.env.HOME || process.env.USERPROFILE}/.openclaw/cortexpool.db`;

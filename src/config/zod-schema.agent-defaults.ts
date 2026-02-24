@@ -11,6 +11,7 @@ import {
   CliBackendSchema,
   HumanDelaySchema,
 } from "./zod-schema.core.js";
+import { CortexPoolSchema } from "./zod-schema.cortex-pool.js";
 
 export const AgentDefaultsSchema = z
   .object({
@@ -166,6 +167,7 @@ export const AgentDefaultsSchema = z
       .strict()
       .optional(),
     sandbox: AgentSandboxSchema,
+    cortexPool: CortexPoolSchema,
   })
   .strict()
   .optional();

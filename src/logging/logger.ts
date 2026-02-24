@@ -102,7 +102,7 @@ function buildLogger(settings: ResolvedSettings): TsLogger<LogObj> {
 
   logger.attachTransport((logObj: LogObj) => {
     try {
-      const time = logObj.date?.toISOString?.() ?? new Date().toISOString();
+      const time = logObj.date?.toLocaleString?.('en-US', { timeZoneName: 'short' }) ?? new Date().toLocaleString('en-US', { timeZoneName: 'short' });
       const line = JSON.stringify({ ...logObj, time });
       fs.appendFileSync(settings.file, `${line}\n`, { encoding: "utf8" });
     } catch {
