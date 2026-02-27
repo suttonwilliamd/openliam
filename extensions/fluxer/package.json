@@ -1,0 +1,14 @@
+{
+  "name": "@openclaw/fluxer",
+  "version": "2026.2.26",
+  "description": "OpenClaw Fluxer channel plugin",
+  "type": "module",
+  "devDependencies": {
+    "openclaw": "workspace:*"
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

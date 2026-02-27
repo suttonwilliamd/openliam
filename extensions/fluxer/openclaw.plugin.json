@@ -1,0 +1,15 @@
+{
+  "id": "fluxer",
+  "channels": ["fluxer"],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "token": {
+        "type": "string",
+        "description": "Bot token from Fluxer developer settings"
+      }
+    },
+    "required": ["token"]
+  }
+}
